@@ -23,8 +23,9 @@ const Todoitems = ({todo, ...props}) => {
     }
     return (
         <div className='border' style={getsytle()}>
-            <input onChange={mark} type='checkbox' />
+            <input onChange={mark} type='checkbox' id={todo.id} />
             {' '}
+            <label htmlFor={todo.id}>{todo.text}</label>
             {todo.text}
         </div>
     )
