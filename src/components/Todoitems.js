@@ -3,10 +3,10 @@ import React from 'react'
 
 
 
-const Todoitems = (props) => {
+const Todoitems = ({todo, ...props}) => {
 
     const getsytle = () => {
-        if (props.todo.completed) {
+        if (todo.completed) {
             return {
                 textDecoration: 'line-through'
             }
@@ -25,7 +25,7 @@ const Todoitems = (props) => {
         <div className='border' style={getsytle()}>
             <input onChange={mark} type='checkbox' />
             {' '}
-            {props.todo.text}
+            {todo.text}
         </div>
     )
     
