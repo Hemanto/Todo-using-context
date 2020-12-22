@@ -1,21 +1,19 @@
-import React from 'react'
-import Todoitems from './Todoitems'
-import { UserConsumer } from './userContext';
-
-const Todo = (props) => {
-
+import React, { useContext } from 'react'
+//yeta keno use korlam 
+const Todo = ({item,id,markCompleted}) => {
+    const getSytle = {
+        textDecoration: item.completed ? "line-through" : "none"
+      };
     return (
-        <div className='back-color'>
-            {/* {props.todos.map((item)=>(
-                <Todoitems key={item.id} todo={item}/>
-            ))} */}
-            <UserConsumer>
-                {
-                    (Todos) =>
-                        Todos.map((item) => <Todoitems key={item.id} todo={item} />)
-                }
-            </UserConsumer>
-        </div>
+        <li style={getSytle}>
+            <label htmlFor={id}>
+                <input type='checkbox' id={id}
+                onChange={()=>markCompleted(id)}
+                
+                />
+                {item.text}
+            </label>
+        </li>
     )
 }
 

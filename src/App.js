@@ -1,22 +1,17 @@
 import React from 'react'
 import './App.css';
-import Todo from './components/Todo';
-import {  useState } from 'react';
-import { UserProviver } from './components/userContext';
-import todosData from './todosData'
+import { DataProvider } from './DataProvider';
+import Todoitems from './components/Todoitems';
+import InputForm from './components/InputForm';
+//import Form from './components/Form';
 
 function App() {
-
-  const [Todos, setTodos] = useState(todosData)
-
-
   return (
-    <div className="App">
-      <UserProviver value={Todos}>
-        <Todo/>
-      </UserProviver>  
-     
-    </div>
+    <DataProvider>
+      <InputForm/>
+      <Todoitems/>
+    </DataProvider>
+
   );
 }
 

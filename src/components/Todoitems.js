@@ -1,33 +1,32 @@
-import React from 'react'
-//import { UserConsumer } from './userContext';
+import React,{useContext} from 'react'
+import Todo from './Todo'
+import {DataContext} from '../DataProvider'
 
 
 
-const Todoitems = ({todo, ...props}) => {
+const Todoitems = () => {
+ const [todos,setTodos] = useContext(DataContext)
 
-    const getsytle = () => {
-        if (todo.completed) {
-            return {
-                textDecoration: 'line-through'
-            }
-        } else {
-            return {
-                textDecoration: 'none'
-            }
-        }
-    }
-
-    const mark = (marking) => {
-        console.log('mark', props);
-        marking={props}
-    }
+ const changetocompleted = (id) =>{
+     const newTodos = [...todos]
+     newTodos.forEach((todo,index)=>{
+         if (index===id) {
+             todo.completed=!todo.completed
+         }
+     })
+     setTodos(newTodos)
+ }
     return (
-        <div className='border' style={getsytle()}>
-            <input onChange={mark} type='checkbox' id={todo.id} />
-            {' '}
-            <label htmlFor={todo.id}>{todo.text}</label>
-            {todo.text}
-        </div>
+        <ul>
+            {
+                todos.map((item,index)=>
+                    <Todo key={index} item={item} id={index}
+                    markCompleted={changetocompleted}
+                    />
+                )
+                
+            }
+        </ul>
     )
     
 }
