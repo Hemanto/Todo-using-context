@@ -13,8 +13,9 @@ const InputForm = () => {
     }
     return (
         <div>
+            <h1>TO DO LIST</h1>
             <form onSubmit={addTolist}>
-            <input type='text' name ='todos' value={todoname}
+            <input type='text' name ='todos' value={todoname} placeholder='Write your plan here'
             onChange={(e)=>{
                 setTodoname(e.target.value)
                 

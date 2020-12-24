@@ -5,12 +5,13 @@ const Todo = ({item,id,markCompleted}) => {
         textDecoration: item.completed ? "line-through" : "none"
       };
     return (
-        <li style={getSytle}>
+        <li className='' style={getSytle}>
             <label htmlFor={id}>
                 <input type='checkbox' id={id}
                 onChange={()=>markCompleted(id)}
-                
+                checked={item.completed} 
                 />
+                 {'  '}
                 {item.text}
             </label>
         </li>

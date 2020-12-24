@@ -9,6 +9,8 @@ const Todoitems = () => {
 
  const changetocompleted = (id) =>{
      const newTodos = [...todos]
+
+     //yeta explain koro foreach
      newTodos.forEach((todo,index)=>{
          if (index===id) {
              todo.completed=!todo.completed
@@ -16,8 +18,22 @@ const Todoitems = () => {
      })
      setTodos(newTodos)
  }
+
+//  using map
+// |
+//  const changetocompletedUsMap = (id) => {
+//     const updatedTodos = todos.map((todo, index)=>{
+//         if (index === id) {
+//             const updatedTodo = {...todo, completed: !todo.completed};
+//             return updatedTodo;
+//         } 
+//         return todo;
+//      })
+//      setTodos(updatedTodos)
+//  }
+
     return (
-        <ul>
+        <ul className='listyle'>
             {
                 todos.map((item,index)=>
                     <Todo key={index} item={item} id={index}

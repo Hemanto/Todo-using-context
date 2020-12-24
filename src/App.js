@@ -8,9 +8,12 @@ import InputForm from './components/InputForm';
 function App() {
   return (
     <DataProvider>
+      <div className='mainbody'>
       <InputForm/>
       <Todoitems/>
+      </div>
     </DataProvider>
+    
 
   );
 }

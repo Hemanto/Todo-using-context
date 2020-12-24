@@ -43,3 +43,19 @@
 .border{
   border-bottom: 1px solid rgb(194, 184, 184);
 }
+.mainbody{
+  text-align: center;
+}
+
+.listyle{
+  list-style-type: none;
+  text-align: left;
+  padding: 20px 20px;
+
+}
+::placeholder{
+  text-align: center;
+}
+.listyle>*{
+  border-bottom: 1px solid rgba(203, 208, 209, 0.705);
+}
