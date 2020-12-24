@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from "../DataProvider";
 
 const InputForm = () => {
@@ -11,11 +11,18 @@ const InputForm = () => {
             completed: false}])
             setTodoname('')
     }
+     const inputRef = React.createRef()
+    
+     useEffect(() => {
+         inputRef.current.focus()
+        console.log(inputRef);
+        
+     }, [])
     return (
         <div>
             <h1>TO DO LIST</h1>
             <form onSubmit={addTolist}>
-            <input type='text' name ='todos' value={todoname} placeholder='Write your plan here'
+            <input ref={inputRef} type='text' name ='todos' value={todoname} placeholder='Write your plan here'
             onChange={(e)=>{
                 setTodoname(e.target.value)
                 
