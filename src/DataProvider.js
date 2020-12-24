@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from 'react'
-import todosData from './todosData';
 
 export const DataContext = createContext();
 

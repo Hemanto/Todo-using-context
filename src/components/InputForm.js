@@ -20,7 +20,7 @@ const InputForm = () => {
                 setTodoname(e.target.value)
                 
             }}/>
-            <button>Add</button>
+            <button>ADD</button>
             </form>
         </div>
     )

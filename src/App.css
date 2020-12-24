@@ -45,6 +45,9 @@
 }
 .mainbody{
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  width: 600px;
+  margin: 0 auto;
 }
 
 .listyle{
@@ -55,7 +58,42 @@
 }
 ::placeholder{
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 .listyle>*{
   border-bottom: 1px solid rgba(203, 208, 209, 0.705);
+  margin: 10px 0;
+  padding: 10px;
+  display: flex;justify-content:  space-between;
+
 }
+.listyle button{
+  border: none;
+  outline: none;
+  color: aliceblue;
+  background-color: burlywood;
+}
+.listyle button:hover{
+  color: white;
+  background-color: tomato;
+}
+ form input,form button{
+   border: none;
+   outline: none;
+   border-bottom: 1px solid  rgba(203, 208, 209, 0.705);
+   margin:  0 10px;
+   width: -webkit-fill-available;
+   
+ }
+ form input{
+  height: 42px;
+  font-size: 25px;;
+ }
+ form button{
+   background-color: black;
+   color:  rgba(203, 208, 209, 0.705);
+   font-family: 'Courier New', Courier, monospace;
+ }
+ h1{
+   font-family: 'Courier New', Courier, monospace;
+ }
